@@ -1,0 +1,27 @@
+{
+  "name": "xkcd",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jorge Mena <jormencar@yahoo.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "0.26.1",
+    "fs-extra": "10.0.1"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.5.0",
+    "standard": "^16.0.4"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/standard/eslintrc.json",
+      "prettier"
+    ]
+  }
+}
