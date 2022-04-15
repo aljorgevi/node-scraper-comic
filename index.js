@@ -1,12 +1,13 @@
 import fs from 'fs-extra'
 import axios from 'axios'
 import { getImageSize } from './getImageSize.js'
+import { logger, time } from './logger.js'
 
-const logger = (...args) => console.log('[🤤 dirty-scrapper]', ...args)
+const endtime = time()
 
 const { writeJSON } = fs
 
-const INITIAL_ID_XKCD_COMIC = 2587
+const INITIAL_ID_XKCD_COMIC = 2500
 const MAX_ID_XKCD_COMIC = 2588
 
 for (let id = INITIAL_ID_XKCD_COMIC; id < MAX_ID_XKCD_COMIC; id++) {
@@ -28,5 +29,7 @@ for (let id = INITIAL_ID_XKCD_COMIC; id < MAX_ID_XKCD_COMIC; id++) {
 
   const jsonFile = `./comics/${id}.json`
   await writeJSON(jsonFile, comicToStore)
-  logger(`Wrote ${jsonFile}! 🎉`)
+  logger(`Wrote ${jsonFile}! 🎉\n`)
 }
+
+endtime()
